@@ -1,8 +1,9 @@
-package java_learning;
 /**
  * @author CSY
  * @version 0.0.0
  */
+
+package java_learning;
 
 import java.io.Serializable;
 import java.util.Objects;
