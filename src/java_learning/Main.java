@@ -1,9 +1,8 @@
+package java_learning;
 /**
  * @author CSY
  * @version 0.0.0
  */
-
-import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -11,7 +10,7 @@ import java.util.Scanner;
 
 @SuppressWarnings("unused")
 abstract class Animal {
-    public static final String type = "Animal";
+    public static final String type = "java.Animal";
 
     /**
      * 返回当前类的type静态属性值
@@ -95,7 +94,7 @@ class Person extends Animal implements Serializable {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "java.Person{" +
                 "name='" + name + '\'' +
                 ", sex=" + sex +
                 ", age=" + age +
@@ -134,7 +133,7 @@ public class Main {
 
         Person p = new Person() {
             @Override
-            public @NotNull String toString() {
+            public String toString() {
                 return "In main: " + super.toString();
             }
         };
