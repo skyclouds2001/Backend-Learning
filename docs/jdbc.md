@@ -38,3 +38,12 @@ DDL&DML `executeUpdate(String)` 增删改
 ## PreparedStatement
 
 预编译 SQL 语句，避免 SQL 注入问题
+
+## 数据库连接池
+
+复用数据库连接
+可以资源重用与提升系统响应速度
+
+Connection
+
+Druid
