@@ -34,3 +34,7 @@ DDL&DML `executeUpdate(String)` 增删改
 `boolean next()` 移动光标&判断当前行有效性
 
 `XXX getXXX()` 获取不同数据类型的数据
+
+## PreparedStatement
+
+预编译 SQL 语句，避免 SQL 注入问题

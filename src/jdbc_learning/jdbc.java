@@ -1,9 +1,6 @@
 package jdbc_learning;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class jdbc {
     public static void main (String[] args) {
@@ -15,11 +12,15 @@ public class jdbc {
             String password = "root123456";
             Connection conn = DriverManager.getConnection(url, user, password);
 
-            String sql = "select * from course";
+            String sql1 = "select * from course";
             Statement state = conn.createStatement();
+            ResultSet res1 = state.executeQuery(sql1);
+            System.out.println(res1);
 
-            ResultSet res = state.executeQuery(sql);
-            System.out.println(res);
+            PreparedStatement preparedStatement = conn.prepareStatement("select ? from course");
+            preparedStatement.setString(1, "*");
+            ResultSet res2 = preparedStatement.executeQuery();
+            System.out.println(res2);
 
             state.close();
             conn.close();
