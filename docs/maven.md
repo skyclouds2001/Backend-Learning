@@ -18,3 +18,8 @@ Maven 配置文件：pom.xml
     核心 default
     发布 site
     pre-clean clean post-clean compile test package install pre-site site post-site
+
+Maven 坐标 | 项目的唯一标识
+    groupId 定义项目隶属组织（通常是域名反写）
+    artifactId 定义项目名称（通常即为模块名称）
+    version 定义项目版本号
