@@ -4,6 +4,6 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.sky.mybatis.Mapper">
   <select id="selectCourse" resultType="org.sky.mybatis.Mapper">
-    select * from course
+    select * from course where cou_name = '电路分析基础'
   </select>
 </mapper>

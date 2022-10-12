@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.InputStream;
+import java.util.List;
 
 public class Mapper {
 
@@ -16,7 +17,10 @@ public class Mapper {
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
             try (SqlSession session = sqlSessionFactory.openSession()) {
-                session.selectList("selectCourse");
+                List<Course> courses = session.selectList("selectCourse");
+
+                System.out.println(courses);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
