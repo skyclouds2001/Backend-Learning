@@ -3,8 +3,6 @@
  * @version 0.0.0
  */
 
-package java_learning;
-
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.Scanner;
@@ -104,8 +102,9 @@ class Person extends Animal implements Serializable {
 
     @Override
     public boolean equals(Object o) {
+        Person person = new Person();
         if (this == o) return true;
-        if (!(o instanceof Person person)) return false;
+        if (!(o instanceof Person)) return false;
         return getAge() == person.getAge() && getName().equals(person.getName()) && sex == person.sex;
     }
 
