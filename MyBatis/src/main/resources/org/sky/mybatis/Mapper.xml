@@ -12,4 +12,7 @@
   <select id="selectCourseWithNameAndTea" resultType="org.sky.mybatis.Course">
     select * from course where cou_name = #{cou_name} and cou_tea = #{cou_tea}
   </select>
+  <insert id="addCourse">
+    insert into course (cou_name, cou_credit, cou_ser, cou_per, cou_tea, cou_term, cou_room) values (#{cou_name}, #{cou_credit}, #{cou_ser}, #{cou_per}, #{cou_tea}, #{cou_term}, #{cou_room})
+  </insert>
 </mapper>

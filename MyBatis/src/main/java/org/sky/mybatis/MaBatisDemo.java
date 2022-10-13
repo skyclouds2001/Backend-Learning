@@ -18,7 +18,7 @@ public class MaBatisDemo {
             InputStream inputStream = Resources.getResourceAsStream(resource);
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
-            try (SqlSession session = sqlSessionFactory.openSession()) {
+            try (SqlSession session = sqlSessionFactory.openSession(true)) {
 
                 Mapper mapper = session.getMapper(Mapper.class);
 
@@ -52,6 +52,8 @@ public class MaBatisDemo {
                 System.out.println();
                 System.out.println(course2);
                 System.out.println();
+
+                mapper.addCourse("概率论与数理统计", "3", "MS202018", "40", "王率", "3", "A509");
 
             } catch (Exception e) {
                 e.printStackTrace();
