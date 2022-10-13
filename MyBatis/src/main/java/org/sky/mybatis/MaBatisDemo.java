@@ -6,7 +6,9 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MaBatisDemo {
 
@@ -28,6 +30,27 @@ public class MaBatisDemo {
                 List<Course> course = mapper.selectCourseWithName("数据结构");
                 System.out.println();
                 System.out.println(course);
+                System.out.println();
+
+                List<Course> course0 = mapper.selectCourseWithNameAndTea("数据结构", "张三");
+                System.out.println();
+                System.out.println(course0);
+                System.out.println();
+
+                Course c = new Course();
+                c.setCouName("数据结构");
+                c.setCouTea("张三");
+                List<Course> course1 = mapper.selectCourseWithNameAndTea(c);
+                System.out.println();
+                System.out.println(course1);
+                System.out.println();
+
+                Map<String, String> m = new HashMap<>();
+                m.put("cou_name", "数据结构");
+                m.put("cou_tea", "张三");
+                List<Course> course2 = mapper.selectCourseWithNameAndTea(m);
+                System.out.println();
+                System.out.println(course2);
                 System.out.println();
 
             } catch (Exception e) {

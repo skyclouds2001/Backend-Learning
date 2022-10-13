@@ -7,6 +7,9 @@
     select * from course
   </select>
   <select id="selectCourseWithName" parameterType="string" resultType="org.sky.mybatis.Course">
-    select * from course where cou_name = #{name}
+    select * from course where cou_name = #{cou_name}
+  </select>
+  <select id="selectCourseWithNameAndTea" resultType="org.sky.mybatis.Course">
+    select * from course where cou_name = #{cou_name} and cou_tea = #{cou_tea}
   </select>
 </mapper>

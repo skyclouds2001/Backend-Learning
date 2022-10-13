@@ -9,6 +9,8 @@ public class Course {
     private String cou_term;
     private String cou_room;
 
+    public Course() {}
+
     public Course(String cou_name, String cou_credit, String cou_ser, String cou_per, String cou_tea, String cou_term, String cou_room) {
         this.cou_name = cou_name;
         this.cou_credit = cou_credit;
