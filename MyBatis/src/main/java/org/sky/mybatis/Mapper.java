@@ -17,9 +17,14 @@ public class Mapper {
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
             try (SqlSession session = sqlSessionFactory.openSession()) {
-                List<Course> courses = session.selectList("selectCourse");
+                List<Course> courses = session.selectList("org.sky.mybatis.Mapper.selectCourse");
 
                 System.out.println(courses);
+
+//                Mapper mapper = session.getMapper(Mapper.class);
+//                List<Course> course = mapper.selectCourse();
+//
+//                System.out.println(course);
 
             } catch (Exception e) {
                 e.printStackTrace();
