@@ -30,9 +30,13 @@
   * 使用实体类
   * 使用 Map 集合
 * 动态参数
-  * <if test="{放入判断条件}">{表达式}</if>
+  * `<if test="{放入判断条件}">{表达式}</if>`
   * 解决 and 问题
     * 表达式均添加and和添加冗余恒等条件
-    * <where>替换where关键字
+    * `<where>`替换where关键字
 * 单条件
-  * <where><choose><when test="{放入判断条件}">{表达式}</when><otherwise></otherwise></choose></where>
+  * `<where><choose><when test="{放入判断条件}">{表达式}</when><otherwise></otherwise></choose></where>`
+* 添加
+  * 获取提交主键
+  * 包含-直接获取
+  * 不包含-`<insert id="addCourse" useGeneratedKeys="true" keyProperty="cou_ser"></insert>`

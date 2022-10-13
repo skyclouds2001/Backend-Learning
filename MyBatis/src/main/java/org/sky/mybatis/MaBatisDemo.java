@@ -54,6 +54,9 @@ public class MaBatisDemo {
                 System.out.println();
 
                 mapper.addCourse("概率论与数理统计", "3", "MS202018", "40", "王率", "3", "A509");
+                System.out.println();
+                System.out.println("MS202018");
+                System.out.println();
 
             } catch (Exception e) {
                 e.printStackTrace();
