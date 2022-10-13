@@ -58,6 +58,11 @@ public class MaBatisDemo {
                 System.out.println("MS202018");
                 System.out.println();
 
+                int update = mapper.updateCourse("概率论与数理统计", "3", "MS202018", "40", "王率", "3", "A509");
+                System.out.println();
+                System.out.println(update);
+                System.out.println();
+
             } catch (Exception e) {
                 e.printStackTrace();
             }

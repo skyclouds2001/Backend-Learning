@@ -15,4 +15,7 @@
   <insert id="addCourse">
     insert into course (cou_name, cou_credit, cou_ser, cou_per, cou_tea, cou_term, cou_room) values (#{cou_name}, #{cou_credit}, #{cou_ser}, #{cou_per}, #{cou_tea}, #{cou_term}, #{cou_room})
   </insert>
+  <update id="updateCourse">
+    update course set cou_name=#{cou_name}, cou_credit=#{cou_credit}, cou_per=#{cou_per}, cou_tea=#{cou_tea}, cou_term=#{cou_term}, cou_room=#{cou_room} where cou_ser=#{cou_ser}
+  </update>
 </mapper>
