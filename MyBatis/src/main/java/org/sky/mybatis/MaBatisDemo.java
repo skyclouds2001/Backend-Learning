@@ -17,12 +17,24 @@ public class MaBatisDemo {
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
             try (SqlSession session = sqlSessionFactory.openSession()) {
+                /*
                 List<Course> courses = session.selectList("org.sky.mybatis.Mapper.selectCourse");
+                System.out.println();
                 System.out.println(courses);
+                System.out.println();
+                 */
 
                 Mapper mapper = session.getMapper(Mapper.class);
-                List<Course> course = mapper.selectCourse();
+
+                List<Course> courses = mapper.selectCourse();
+                System.out.println();
+                System.out.println(courses);
+                System.out.println();
+
+                List<Course> course = mapper.selectCourseWithName("数据结构");
+                System.out.println();
                 System.out.println(course);
+                System.out.println();
 
             } catch (Exception e) {
                 e.printStackTrace();
