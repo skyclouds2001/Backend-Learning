@@ -16,3 +16,12 @@
     * 加载核心配置文件，获取 SQLSessionFactory 对象
     * 获取 SQLSession 对象，执行 SQL 语句
     * 释放资源
+
+## 一些细节
+
+* 参数占位符
+  * #{} 参数传递
+  * ${} 表名或列名不固定
+* 参数类型
+  * parameterType
+  * 可以忽略

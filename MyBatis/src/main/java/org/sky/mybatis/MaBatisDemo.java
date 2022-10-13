@@ -17,12 +17,6 @@ public class MaBatisDemo {
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
             try (SqlSession session = sqlSessionFactory.openSession()) {
-                /*
-                List<Course> courses = session.selectList("org.sky.mybatis.Mapper.selectCourse");
-                System.out.println();
-                System.out.println(courses);
-                System.out.println();
-                 */
 
                 Mapper mapper = session.getMapper(Mapper.class);
 

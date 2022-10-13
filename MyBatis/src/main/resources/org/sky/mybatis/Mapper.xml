@@ -6,7 +6,7 @@
   <select id="selectCourse" resultType="org.sky.mybatis.Course">
     select * from course
   </select>
-  <select id="selectCourseWithName" resultType="org.sky.mybatis.Course">
+  <select id="selectCourseWithName" parameterType="string" resultType="org.sky.mybatis.Course">
     select * from course where cou_name = #{name}
   </select>
 </mapper>
