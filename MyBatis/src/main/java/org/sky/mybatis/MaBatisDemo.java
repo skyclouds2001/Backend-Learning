@@ -63,6 +63,11 @@ public class MaBatisDemo {
                 System.out.println(update);
                 System.out.println();
 
+                mapper.deleteCourse("MS202018");
+                System.out.println();
+                System.out.println("MS202018");
+                System.out.println();
+
             } catch (Exception e) {
                 e.printStackTrace();
             }

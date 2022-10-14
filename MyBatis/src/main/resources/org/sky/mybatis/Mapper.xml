@@ -18,4 +18,7 @@
   <update id="updateCourse">
     update course set cou_name=#{cou_name}, cou_credit=#{cou_credit}, cou_per=#{cou_per}, cou_tea=#{cou_tea}, cou_term=#{cou_term}, cou_room=#{cou_room} where cou_ser=#{cou_ser}
   </update>
+  <delete id="deleteCourse">
+    delete from course where cou_ser=#{cou_ser}
+  </delete>
 </mapper>

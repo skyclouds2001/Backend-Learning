@@ -42,3 +42,5 @@
   * 不包含-`<insert id="addCourse" useGeneratedKeys="true" keyProperty="cou_ser"></insert>`
 * 更新
   * `<set><if test="{判断条件}">{表达式}</if></set>`
+* 单次删除
+* 批量删除
