@@ -21,4 +21,6 @@ public interface Mapper {
 
     void deleteCourse(String cou_ser);
 
+    void deleteCourses(@Param("cou_ser_s") String[] cou_ser_s);
+
 }

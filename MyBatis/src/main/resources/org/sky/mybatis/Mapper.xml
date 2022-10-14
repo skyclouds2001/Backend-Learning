@@ -21,4 +21,7 @@
   <delete id="deleteCourse">
     delete from course where cou_ser=#{cou_ser}
   </delete>
+  <delete id="deleteCourses">
+    delete from course where cou_ser in <foreach collection="cou_ser_s" item="cou_ser" separator="," open="(" close=")">#{cou_ser}</foreach>
+  </delete>
 </mapper>

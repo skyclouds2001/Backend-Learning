@@ -18,7 +18,7 @@ public class MaBatisDemo {
             InputStream inputStream = Resources.getResourceAsStream(resource);
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
-            try (SqlSession session = sqlSessionFactory.openSession(true)) {
+            try (SqlSession session = sqlSessionFactory.openSession()) {
 
                 Mapper mapper = session.getMapper(Mapper.class);
 
@@ -67,6 +67,13 @@ public class MaBatisDemo {
                 System.out.println();
                 System.out.println("MS202018");
                 System.out.println();
+
+                // mapper.deleteCourses(new String[]{"MS202018"});
+                // System.out.println();
+                // System.out.println("MS202018");
+                // System.out.println();
+
+                session.commit();
 
             } catch (Exception e) {
                 e.printStackTrace();
