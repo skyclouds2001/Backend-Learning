@@ -44,3 +44,9 @@
   * `<set><if test="{判断条件}">{表达式}</if></set>`
 * 单次删除
 * 批量删除 利用foreach标签
+
+* 注解形式
+  * @Select
+  * @Insert
+  * @Update
+  * @Delete
