@@ -7,4 +7,6 @@
 
 # MavenWeb
 
-`<packaging> 打包方式 jar或war`
+`<packaging>` 打包方式 jar或war
+
+TomCat 的配置
