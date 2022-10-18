@@ -1,4 +1,4 @@
-package org.sky.mybatis;
+package org.example;
 
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.io.Resources;

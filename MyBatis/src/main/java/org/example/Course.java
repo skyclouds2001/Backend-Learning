@@ -1,4 +1,4 @@
-package org.sky.mybatis;
+package org.example;
 
 public class Course {
     private String cou_name;

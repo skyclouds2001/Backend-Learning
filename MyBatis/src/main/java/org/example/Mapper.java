@@ -1,4 +1,4 @@
-package org.sky.mybatis;
+package org.example;
 
 import org.apache.ibatis.annotations.Param;
 
