@@ -2,6 +2,7 @@
  * @author CSY
  * @version 0.0.0
  */
+package org.example;
 
 import java.io.Serializable;
 import java.util.Objects;
