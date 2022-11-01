@@ -2,8 +2,17 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-  <bean id="bookDao" class="org.example.dao.impl.BookDaoImpl" />
+
+  <bean id="bookDao" name="dao book" class="org.example.dao.impl.BookDaoImpl" />
   <bean id="bookService" class="org.example.service.impl.BookServiceImpl">
     <property name="bookDao" ref="bookDao" />
   </bean>
+
+  <bean id="bookStaticFactory" class="org.example.factory.BookStaticFactory" factory-method="getBookDao" />
+
+  <bean id="bookFactory" class="org.example.factory.BookFactory" />
+  <bean id="bookDaoFromFactory" factory-bean="bookFactory" factory-method="getBookDao" />
+
+  <bean id="bookDaoFactoryBean" class="org.example.factory.BookDaoFactoryBean" />
+
 </beans>

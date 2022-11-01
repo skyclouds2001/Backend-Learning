@@ -49,3 +49,26 @@ Spring内部提供IoC容器，负责对象创建和初始化，此类对象统�
 添加 spring 核心依赖
 配置 spring 配置文件 - beans 配置
 主文件获取 beans 管理容器并调取相应的 bean，相应类需提供 set 方法
+
+### 基本配置
+
+* beans 标签
+* bean 标签 （默认是单例）
+  * id 属性 | bean唯一坐标
+  * class 属性 | 对应类
+  * name 属性 | bean的别名
+* property 标签
+
+### 其他
+
+适合bean处理    表现层对象、业务层对象、数据层对象、工具对象
+不适合bean处理    封装实体的域对象
+
+### bean 实例化
+
+默认构造方法
+静态工厂-静态方法
+实例工厂
+FactoryBean
+
+### bean 生命周期
