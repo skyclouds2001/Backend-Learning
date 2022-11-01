@@ -72,3 +72,13 @@ Spring内部提供IoC容器，负责对象创建和初始化，此类对象统�
 FactoryBean
 
 ### bean 生命周期
+
+* 初始化
+  * 创建对象（内存分配）
+  * 执行构造方法
+  * 执行属性注入 - set 操作
+  * 执行 bean 初始化方法 | 配置 init-method - 实现 InitializingBean 接口
+* 使用
+  * 执行业务操作
+* 关闭
+  * 执行 bean 销毁方法 | 配置 destroy-method - 实现 DisposableBean 接口
