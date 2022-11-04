@@ -82,3 +82,8 @@ FactoryBean
   * 执行业务操作
 * 关闭
   * 执行 bean 销毁方法 | 配置 destroy-method - 实现 DisposableBean 接口
+
+### 依赖注入方式
+
+setter 注入
+构造器注入

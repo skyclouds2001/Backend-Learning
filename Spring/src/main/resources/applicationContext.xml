@@ -4,8 +4,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
   <bean id="bookDao" name="dao book" class="org.example.dao.impl.BookDaoImpl" />
+  <bean id="userDao" class="org.example.dao.impl.UserDaoImpl">
+    <property name="id" value="10" />
+  </bean>
   <bean id="bookService" class="org.example.service.impl.BookServiceImpl" init-method="init" destroy-method="close">
     <property name="bookDao" ref="bookDao" />
+    <property name="userDao" ref="userDao" />
   </bean>
 
   <bean id="bookStaticFactory" class="org.example.factory.BookStaticFactory" factory-method="getBookDao" />
