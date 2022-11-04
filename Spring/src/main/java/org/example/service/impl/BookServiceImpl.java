@@ -1,6 +1,7 @@
 package org.example.service.impl;
 
 import org.example.dao.BookDao;
+import org.example.dao.ManagerDao;
 import org.example.dao.UserDao;
 import org.example.service.BookService;
 import org.springframework.beans.factory.DisposableBean;
@@ -12,6 +13,8 @@ public class BookServiceImpl implements BookService, InitializingBean, Disposabl
 
     private UserDao userDao;
 
+    private ManagerDao managerDao;
+
     public BookServiceImpl() {}
 
     @Override
@@ -19,6 +22,7 @@ public class BookServiceImpl implements BookService, InitializingBean, Disposabl
         System.out.println("BookService save");
         bookDao.save();
         userDao.save();
+        managerDao.save();
     }
 
     public void init() {
@@ -45,6 +49,10 @@ public class BookServiceImpl implements BookService, InitializingBean, Disposabl
 
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
+    }
+
+    public void setManagerDao(ManagerDao managerDao) {
+        this.managerDao = managerDao;
     }
 
 }

@@ -87,3 +87,6 @@ FactoryBean
 
 setter 注入
 构造器注入
+
+一般优先构造器，可选setter
+需根据实际情况进行
