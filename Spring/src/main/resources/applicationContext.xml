@@ -10,6 +10,11 @@
   <bean id="managerDao" class="org.example.dao.impl.ManagerDaoImpl">
     <constructor-arg name="bookDao" ref="bookDao" />
     <constructor-arg name="id" value="1" type="int" index="1" />
+    <property name="nums">
+      <array>
+        <value>0</value>
+      </array>
+    </property>
   </bean>
   <bean id="bookService" class="org.example.service.impl.BookServiceImpl" init-method="init" destroy-method="close">
     <property name="bookDao" ref="bookDao" />

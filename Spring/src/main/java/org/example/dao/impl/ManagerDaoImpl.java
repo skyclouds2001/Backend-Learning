@@ -9,9 +9,15 @@ public class ManagerDaoImpl implements ManagerDao {
 
     private final int id;
 
+    private int[] nums;
+
     public ManagerDaoImpl(BookDao bookDao, int id) {
         this.bookDao = bookDao;
         this.id = id;
+    }
+
+    public void setNums(int[] nums) {
+        this.nums = nums;
     }
 
     @Override
@@ -19,6 +25,7 @@ public class ManagerDaoImpl implements ManagerDao {
         System.out.println("ManagerDao");
         bookDao.save();
         System.out.println(this.id);
+        System.out.println(this.nums.length);
     }
 
 }

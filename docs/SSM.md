@@ -90,3 +90,14 @@ setter 注入
 
 一般优先构造器，可选setter
 需根据实际情况进行
+
+依赖自动装配 autowire属性
+* byName 按名称匹配
+* byType 按类型匹配
+
+集合装配
+array-value
+list-value
+map-entry
+set-value
+props-prop
