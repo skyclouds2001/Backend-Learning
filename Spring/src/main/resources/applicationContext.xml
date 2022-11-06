@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
   <bean id="bookDao" name="dao book" class="org.example.dao.impl.BookDaoImpl" />
   <bean id="userDao" class="org.example.dao.impl.UserDaoImpl">
@@ -31,11 +32,18 @@
 
   <!-- ***** Example ***** -->
 
+  <!--  <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">-->
+  <!--    <property name="driverClassName" value="com.mysql.jdbc.Driver" />-->
+  <!--    <property name="url" value="jdbc:mysql://localhost:3306/csy" />-->
+  <!--    <property name="username" value="root" />-->
+  <!--    <property name="password" value="root123456" />-->
+  <!--  </bean>-->
+  <context:property-placeholder location="jdbc.properties" />
   <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
-    <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-    <property name="url" value="jdbc:mysql://localhost:3306/csy" />
-    <property name="username" value="root" />
-    <property name="password" value="root123456" />
+    <property name="driverClassName" value="${jdbc.driver}" />
+    <property name="url" value="${jdbc.url}" />
+    <property name="username" value="${jdbc.username}" />
+    <property name="password" value="${jdbc.password}" />
   </bean>
   <bean id="dataSourceD" class="com.mchange.v2.c3p0.ComboPooledDataSource">
     <property name="driverClass" value="com.mysql.jdbc.Driver" />
