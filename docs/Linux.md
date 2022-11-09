@@ -183,3 +183,32 @@ chmod 751 hello.txt
 `chown [-R] [用户][:][用户组] 文件或文件夹`
 
 修改文件所属用户或用户组
+
+## Linux 实用操作
+
+强制停止（程序|命令） `CTRL+C`
+退出或登出（账户|程序） `CTRL+D`
+（但不可退出vi或vim）
+
+查看历史输入命令 `history`
+使用`!`自动执行上一次匹配前缀的
+
+历史命令搜索 `CTRL+R`
+
+光标移动
+跳至命令开头 `CTRL+A`
+跳至命令结尾 `CTRL+E`
+命令左移一个单词 `CTRL+←`
+命令右移一个单词 `CTRL+→`
+
+清屏 `CTRL+L` `clear`
+
+软件安装
+(CentOS) .rpm
+yum [-y] install wget
+yum [-y] remove wget
+yum search wget
+(Ubuntu) .deb
+apt install wget
+apt remove wget
+apt search wget
