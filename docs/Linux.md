@@ -186,6 +186,8 @@ chmod 751 hello.txt
 
 ## Linux 实用操作
 
+### 小技巧
+
 强制停止（程序|命令） `CTRL+C`
 退出或登出（账户|程序） `CTRL+D`
 （但不可退出vi或vim）
@@ -203,12 +205,32 @@ chmod 751 hello.txt
 
 清屏 `CTRL+L` `clear`
 
-软件安装
+### 软件安装
+
 (CentOS) .rpm
 yum [-y] install wget
 yum [-y] remove wget
 yum search wget
-(Ubuntu) .deb
+
+(Ubuntu-WSL) .deb
 apt install wget
 apt remove wget
 apt search wget
+
+### systemctl
+
+`systemctl start|stop|status|enable|disable <service>`
+(Ubuntu-WSL)
+sshd
+...
+(CentOS)
+...
+其他软件如ntp和httpd
+
+### 创建软链接
+
+`ln -s <被链接文件或文件夹> <需链接去的目的地>`
+
+类似 windows 下的快捷方式
+
+选项 -s 即代表软链接
