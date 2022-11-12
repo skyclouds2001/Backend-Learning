@@ -227,6 +227,8 @@ sshd
 ...
 其他软件如ntp和httpd
 
+`service <service> start|stop|status|enable|disable`
+
 ### 创建软链接
 
 `ln -s <被链接文件或文件夹> <需链接去的目的地>`
@@ -234,3 +236,24 @@ sshd
 类似 windows 下的快捷方式
 
 选项 -s 即代表软链接
+
+### 日期和时区
+
+查看系统时间 `date [-d <语句>] [+格式化字符串]`
+
+-d 按给定字符串显示日期
+
+%Y %y %m %d %H %M %S %s
+
+### IP地址和主机名
+
+查看本机IP地址 `ifconfig`
+
+127.0.0.1 代表本机
+0.0.0.0 代表本机or任意IP访问
+
+查看主机名 `hostname`
+
+修改主机名 `hostnamectl`（CentOS）
+
+域名解析 优先本地记录 /etc/hosts DNS服务器
