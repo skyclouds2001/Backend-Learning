@@ -327,3 +327,9 @@ KeyValue 型结构
 全部用户 `/etc/profile`
 `source 配置文件` 以立即生效
 
+### 文件上传和下周
+
+使用 FinalShell 软件
+ 下载文件
+`rz` 上传文件
+`sz` 下载文件
