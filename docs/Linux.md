@@ -297,3 +297,18 @@ UID PID PPID C STIME TTY TIME CMD
 `kill [-9] 进程ID`
 
 -9代表强制关闭进程，否则会向进程发出信息要求关闭（不一定关闭）
+
+```md
+top - 当前系统时间, 启动时间, 登录的用户数量, 负载（1、5、15分钟负载）
+Tasks: 进程数量, 运行中进程数量, 睡眠中进程数量, 停止中进程数量, 僵尸进程数量
+%Cpu(s): CPU使用率, 用户CPU使用率, 系统CPU使用率, 高优先级进程占CPU时间百分比, 空闲CPU率, IO等待CPU占用率, CPU硬件中断率, 强制等待占用CPU率
+KiB Mem: {物理内存} 总量 空闲 使用 buff和cache占用
+KibSwap: {虚拟内存} 总量 空闲 使用 buff和cache占用
+
+{当前运行的进程列表}
+PID进程ID USER{进程所属用户} PR{进程优先级} NI{优先级标识} VIRT{进程使用虚拟内存} RES{进程使用物理内存} SHR{进程使用共享内存} S{进程状态} %CPU{进程占用CPU率} %MEM{进程占用内存率} TIME+{进程使用CPU时间} COMMAND{进程命令或名称或程序文件路径}
+```
+
+`iostat` 查看CPU和磁盘的相关信息
+
+`sar` 查看网络的相关统计
