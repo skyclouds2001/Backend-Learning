@@ -1,6 +1,8 @@
 package org.example;
 
 import org.example.dao.BookDao;
+import org.example.dao.ProductDao;
+import org.example.dao.impl.ProductDaoImpl;
 import org.example.service.BookService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -27,6 +29,9 @@ public class App {
 
         DataSource dataSource1 = (DataSource) ctx.getBean("dataSourceD");
         System.out.println(dataSource1);
+
+        ProductDao productDao = ctx.getBean("productDao", ProductDaoImpl.class);
+        productDao.save();
 
         ctx.close();
     }

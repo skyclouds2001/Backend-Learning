@@ -53,4 +53,6 @@
     <property name="maxPoolSize" value="1000" />
   </bean>
 
+  <context:component-scan base-package="org.example.dao.impl" />
+
 </beans>

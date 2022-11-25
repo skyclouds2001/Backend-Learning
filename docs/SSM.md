@@ -122,3 +122,8 @@ autowire 自动装配类型
 factory-method bean 工厂方法
 facory-bean 实例工厂类
 lazy-init 控制是否延迟加载
+
+### 注解开发
+
+配置自动装配 `<context:component-scan base-package="org.example.dao.impl" />`
+配置 spring 类 `@Component` `@Component("productDao")`
