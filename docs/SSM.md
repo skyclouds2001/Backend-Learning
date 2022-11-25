@@ -101,3 +101,24 @@ list-value
 map-entry
 set-value
 props-prop
+
+### 容器
+
+初始化配置文件
+
+顶层接口 BeanFactory
+核心接口 ApplicationContext
+常用初始化类
+ClassPathXmlApplicationContext
+FileSystemXmlApplicationContext
+
+id bean id
+name bean 别名
+class bean 类型，静态工厂类，FactoryBean 类
+scope 控制 bean 实例数量
+init-method 生命周期初始化方法
+destory-method 生命周期销毁方法
+autowire 自动装配类型
+factory-method bean 工厂方法
+facory-bean 实例工厂类
+lazy-init 控制是否延迟加载

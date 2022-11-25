@@ -15,6 +15,7 @@ public class App {
 
         BookService bookService = (BookService) ctx.getBean("bookService");
         bookService.save();
+        // BookService bookService = ctx.getBean("bookService", BookService.class)
 
         BookDao bookDao = (BookDao) ctx.getBean("bookDaoFactoryBean");
         bookDao.save();
