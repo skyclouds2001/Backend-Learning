@@ -1,5 +1,3 @@
-# SSM
-
 ## Spring
 
 https://spring.io
@@ -127,3 +125,19 @@ lazy-init 控制是否延迟加载
 
 配置自动装配 `<context:component-scan base-package="org.example.dao.impl" />`
 配置 spring 类 `@Component` `@Component("productDao")`
+
+`@Controllor` 控制层（展示层）Bean
+`@Service` 业务层Bean
+`@Repository` 数据访问层Bean 仅DAO类
+
+以上作用上与 @Component 类似
+默认 name 属性是小写开头的类名
+
+可使用class类替代xml配置文件
+
+`@Configuration` 设置为配置类
+`@ComponentScan` 设置配置路径
+
+`@Scope` 定义 bean 作用范围
+
+`@PostConstruct` `@PreDestory` 定义 bean 生命周期
