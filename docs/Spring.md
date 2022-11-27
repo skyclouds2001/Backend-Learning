@@ -124,7 +124,7 @@ lazy-init 控制是否延迟加载
 ### 注解开发
 
 配置自动装配 `<context:component-scan base-package="org.example.dao.impl" />`
-配置 spring 类 `@Component` `@Component("productDao")`
+配置 spring 类 `@Component`
 
 `@Controllor` 控制层（展示层）Bean
 `@Service` 业务层Bean
@@ -137,7 +137,18 @@ lazy-init 控制是否延迟加载
 
 `@Configuration` 设置为配置类
 `@ComponentScan` 设置配置路径
+`@PropertySource` 注入配置属性文件
 
 `@Scope` 定义 bean 作用范围
 
 `@PostConstruct` `@PreDestory` 定义 bean 生命周期
+
+`@Autowired` 对应变量 | 注解开发依赖自动注入
+
+`@Qualifier` 选出开发者所需要的bean
+
+`@Value` 简单类型注入
+
+`@Bean` 注释当前方法，说明返回值为一个bean，相当于定义bean
+
+`@Import` 向方法中导入bean
