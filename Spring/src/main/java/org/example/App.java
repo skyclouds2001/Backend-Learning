@@ -1,10 +1,10 @@
 package org.example;
 
+import org.example.dao.ProductDao;
+import org.example.service.BookService;
 import org.example.config.SpringConfig;
 import org.example.dao.BookDao;
-import org.example.dao.ProductDao;
 import org.example.dao.impl.ProductDaoImpl;
-import org.example.service.BookService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

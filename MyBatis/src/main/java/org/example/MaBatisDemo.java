@@ -1,6 +1,5 @@
 package org.example;
 
-import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
