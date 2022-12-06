@@ -152,3 +152,67 @@ lazy-init 控制是否延迟加载
 `@Bean` 注释当前方法，说明返回值为一个bean，相当于定义bean
 
 `@Import` 向方法中导入bean
+
+### AOP 简介
+
+面向切面编程【编程范式】
+
+无入侵式 无侵入式
+
+##### 关键概念
+
+* **连接点** 程序执行中的任意位置 （视为方法执行）
+* **切入点** 匹配连接点的式子 （可描述一个方法，也可描述多个方法）
+* **通知** 在切入点处执行的操作，即共性功能
+* **通知类** 定义通知的类
+* **切面** 描述通知与切入点的对应关系
+
+##### 示例
+
+```java
+@Component
+@Aspect
+public class Example {
+  @Pointcut("execution(void org.example.exapmleDao.save())")
+  private void pt() {}
+
+  @Before("pt()")
+  public void method() {}
+}
+```
+
+##### 工作流程
+
+1. Spring 容器启动
+2. 读取所有切面配置中的切入点
+3. 初始化bean（并判定bean对应类是否匹配到任意切入点，匹配成功的会创建目标对象的代理对象，否则直接创建原对象）
+4. 获取bean执行方法
+
+##### 切入点表达式
+
+动作关键字-访问修饰符（可选）-返回值-包名-类接口名-方法名-参数-异常名（可选）
+
+`*`  匹配单个的任意符号
+
+`..` 匹配多个连续的任意符号
+
+`+` 专用于匹配子类类型
+
+##### 通知类型
+
+* 前置通知 @Before
+* 后置通知 @After
+* 环绕通知 @Around
+* 返回后通知 @AfterReturning
+* 抛出异常后通知 @AfterThrowing
+
+```java
+public Object around(ProceedingJoinPoint pjp) throws Throwable {
+  // todo
+  Object ret = pjp.proceed();
+  // todo
+  return ret
+}
+```
+
+获取数据 JoinPoint  ProceedingJoinPoint
