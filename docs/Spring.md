@@ -216,3 +216,22 @@ public Object around(ProceedingJoinPoint pjp) throws Throwable {
 ```
 
 获取数据 JoinPoint  ProceedingJoinPoint
+
+### Spring 事务
+
+在数据层和业务层保证一系列的数据库操作同成功或同失败
+
+1. 业务层接口添加 Spring 事务管理 `@Transactional`
+2. 设置事务管理器
+3. 开启注解式事务驱动 `@EnableTransactionManagement`
+
+* 事务管理员 - 发起事务方，通指业务层开启事务的方法
+* 事务协调员 - 加入事务方，通指数据层方法及业务层方法
+
+* readOnly 设置是否为只读事务
+* timeout 设置事务超时时间
+* rollbackFor 设置事务回滚异常
+* rollbackForClassName
+* noRollbackFor 设置事务不回滚异常
+* noRollbackForClassName
+* propagation 设置事务传播行为
