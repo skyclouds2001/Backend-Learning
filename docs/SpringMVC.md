@@ -56,3 +56,29 @@ Spring 单独指定 或 全部指定同时排除controller包 或 直接一并�
 ```
 @ComponentScan(value = "org.example", excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = {Controller.class}))
 ```
+
+## 请求及响应
+
+### 请求路径设置
+
+建议按`/路径/操作`的形式
+
+为简洁起见，可直接在模块类上使用`@RequestMapping`指定请求路径
+
+### 请求方法设置
+
+使用指定请求方法的Mapping
+
+`@GetMapping`
+`@PostMapping`
+`@PutMapping`
+`@DeleteMapping`
+
+### 请求参数配置
+
+乱码问题设置过滤器解决 `getServletFilters()`
+
+普通参数  直接在方法中声明参数
+参数识别别名  `@RequestParam`
+POJO参数  方法参数指定为数据模型对象
+Array、List（多个请求参数且参数名相同）  同上
