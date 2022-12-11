@@ -82,3 +82,12 @@ Spring 单独指定 或 全部指定同时排除controller包 或 直接一并�
 参数识别别名  `@RequestParam`
 POJO参数  方法参数指定为数据模型对象
 Array、List（多个请求参数且参数名相同）  同上
+
+JSON参数 Mvc配置类添加`@EnableWebMvc`注解 对应方法添加`@RequestBody`注解即指定请求参数位于请求体中
+
+日期参数 使用`@DateTimeFormat(pattern=)`指定转换模式
+
+### 响应配置
+
+JSP页面 直接返回JSP文件路径
+普通文本、JSON等等 注解`@ResponseBody`

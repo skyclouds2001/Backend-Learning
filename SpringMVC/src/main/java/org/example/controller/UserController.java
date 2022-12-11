@@ -21,6 +21,7 @@ public class UserController {
         System.out.println("user get ..." + id + " " + userName);
         return "[{'id':0}]";
     }
+
     @PostMapping("/post")
     @ResponseBody
     public String post(User user) {
