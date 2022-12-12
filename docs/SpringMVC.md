@@ -91,3 +91,17 @@ JSON参数 Mvc配置类添加`@EnableWebMvc`注解 对应方法添加`@RequestBo
 
 JSP页面 直接返回JSP文件路径
 普通文本、JSON等等 注解`@ResponseBody`
+
+## REST风格
+
+representational state transfer 表现形式状态转换
+
+使用***不同请求方法***区分请求的方式  /user  /user/${id}
+
+资源通常使用复数，表示为一类资源
+
+* 查询|全部 GET
+* 查询|指定 GET+Path参数
+* 添加 POST
+* 修改 PUT
+* 删除 DELETE
