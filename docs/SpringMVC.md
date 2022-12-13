@@ -105,3 +105,25 @@ representational state transfer 表现形式状态转换
 * 添加 POST
 * 修改 PUT
 * 删除 DELETE
+
+## SSM整合
+
+## 拦截器
+
+Interceptor
+
+动态拦截方法调用的机制
+
+Filter处理所有访问，Interception仅处理SpringMvc访问
+
+参数
+- request 请求头
+- response 响应头
+- handler 请求处理类
+- modelAndView 封装页面跳转相关事宜
+- ex 抛出的异常
+
+拦截器链
+- preHandle 与配置顺序相同 必定运行
+- postHandle 与配置顺序不同 可能不运行
+- afterCompletion 与配置顺序不同 可能不运行
