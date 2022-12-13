@@ -19,12 +19,12 @@ public interface CourseDao {
     List<Course> getAll();
 
     @Insert("insert into course (cou_name, cou_credit, cou_ser, cou_per, cou_tea, cou_term, cou_room) values(#{cou_name}, #{cou_credit}, #{cou_ser}, #{cou_per}, #{cou_tea}, #{cou_term}, #{cou_room})")
-    void save(Course course);
+    int save(Course course);
 
     @Update("update course set cou_name = #{cou_name}, cou_credit = #{cou_credit}, cou_per = #{cou_per}, cou_tea = #{cou_tea}, cou_term = #{cou_term}, cou_room = #{cou_room} where cou_ser = #{cou_ser}")
-    void update(Course course);
+    int update(Course course);
 
     @Delete("delete from course where cou_ser = #{id}")
-    void delete(String id);
+    int delete(String id);
 
 }

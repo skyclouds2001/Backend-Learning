@@ -26,20 +26,17 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public boolean save(Course course) {
-        courseDao.save(course);
-        return true;
+        return courseDao.save(course) > 0;
     }
 
     @Override
     public boolean update(Course course) {
-        courseDao.update(course);
-        return true;
+        return courseDao.update(course) > 0;
     }
 
     @Override
     public boolean delete(String id) {
-        courseDao.delete(id);
-        return true;
+        return courseDao.delete(id) > 0;
     }
 
 }
