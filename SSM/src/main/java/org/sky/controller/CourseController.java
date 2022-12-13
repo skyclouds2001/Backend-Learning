@@ -16,32 +16,68 @@ public class CourseController {
 
     @GetMapping("/{id}")
     @ResponseBody
-    Course getById(@PathVariable String id) {
-        return courseService.getById(id);
+    Result getById(@PathVariable String id) {
+        Course course = courseService.getById(id);
+        boolean flag = course != null;
+        return new Result(flag ? Code.SUCCESS : Code.FAILURE, "", flag, course);
     }
 
     @GetMapping
     @ResponseBody
-    List<Course> getAll() {
-        return courseService.getAll();
+    Result getAll() {
+        List<Course> courses = courseService.getAll();
+        boolean flag = courses != null;
+        return new Result(flag ? Code.SUCCESS : Code.FAILURE, "", flag, courses);
     }
 
     @PostMapping
     @ResponseBody
-    boolean save(@RequestBody Course course) {
-        return courseService.save(course);
+    Result save(@RequestBody Course course) {
+        boolean flag = courseService.save(course);
+        return new Result(flag ? Code.SUCCESS : Code.FAILURE, "", flag, null);
     }
 
     @PutMapping
     @ResponseBody
-    boolean update(@RequestBody Course course) {
-        return courseService.update(course);
+    Result update(@RequestBody Course course) {
+        boolean flag = courseService.update(course);
+        return new Result(flag ? Code.SUCCESS : Code.FAILURE, "", flag, null);
     }
 
     @DeleteMapping
     @ResponseBody
-    boolean delete(@RequestBody String id) {
-        return courseService.delete(id);
+    Result delete(@RequestBody String id) {
+        boolean flag = courseService.delete(id);
+        return new Result(flag ? Code.SUCCESS : Code.FAILURE, "", flag, null);
+    }
+
+    public static class Result {
+
+        private Object data;
+
+        private Integer code;
+
+        private String message;
+
+        private Boolean success;
+
+        public Result() {}
+
+        public Result(Integer code, String message, Boolean success, Object data) {
+            this.data = data;
+            this.code = code;
+            this.message = message;
+            this.success = success;
+        }
+
+    }
+
+    public static class Code {
+
+        public static final int SUCCESS = 0;
+
+        public static final int FAILURE = 1;
+
     }
 
 }
