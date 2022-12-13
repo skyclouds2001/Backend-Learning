@@ -1,9 +1,11 @@
 package org.sky.service;
 
 import org.sky.domain.Course;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Transactional
 public interface CourseService {
 
     /**

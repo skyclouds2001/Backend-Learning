@@ -1,6 +1,9 @@
 package org.sky.config;
 
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+import javax.servlet.Filter;
 
 public class ServletConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
 
@@ -17,6 +20,13 @@ public class ServletConfig extends AbstractAnnotationConfigDispatcherServletInit
     @Override
     protected String[] getServletMappings() {
         return new String[]{"/"};
+    }
+
+    @Override
+    protected Filter[] getServletFilters() {
+        CharacterEncodingFilter filter = new CharacterEncodingFilter();
+        filter.setEncoding("UTF-8");
+        return new Filter[]{filter};
     }
 
 }
