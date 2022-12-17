@@ -18,8 +18,19 @@
 
 分别创建多个环境的配置文件
 
-# 创建
+## 初始化
 
 使用 Spring Initializr
 
-勾选 Spring Web - 添加 Spring Mvc 相关包
+* 勾选 Spring Web - 添加 SpringMvc
+* 勾选 MyBatis Framework 及 MySQL Driver - 添加 MyBatis
+
+## SSM 整合
+
+* pom.xml 依赖坐标
+* application.xml 参数配置
+* Application 主类
+* controller 展示层类包
+* dao 数据访问层类包
+* domain 数据模型类包
+* service 业务层类包
