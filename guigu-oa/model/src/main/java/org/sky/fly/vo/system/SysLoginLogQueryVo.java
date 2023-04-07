@@ -1,7 +1,7 @@
 package org.sky.fly.vo.system;
 
-import lombok.Data;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 @Data
 public class SysLoginLogQueryVo {
