@@ -1,6 +1,7 @@
 package org.sky.fly.controller;
 
 import org.sky.fly.model.system.SysRole;
+import org.sky.fly.result.Result;
 import org.sky.fly.service.SysRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,8 +16,9 @@ public class SysRoleController {
     @Autowired
     private SysRoleService sysRoleService;
 
-    @GetMapping
-    public List<SysRole> getRoleList() {
-        return sysRoleService.list();
+    @GetMapping("/")
+    public Result<List<SysRole>> getRoleList() {
+        List<SysRole> roleList = sysRoleService.list();
+        return Result.ok(roleList);
     }
 }
