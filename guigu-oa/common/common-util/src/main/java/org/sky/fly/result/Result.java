@@ -33,7 +33,11 @@ public class Result<T> {
         return result;
     }
 
-    public static<T> Result<T> ok(T data){
+    public static<T> Result<T> ok() {
+        return build(null);
+    }
+
+    public static<T> Result<T> ok(T data) {
         return build(data, ResultCodeEnum.SUCCESS);
     }
 
