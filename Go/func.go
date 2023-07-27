@@ -33,6 +33,22 @@ func create() func() int {
 	return next
 }
 
+func factorial(n uint64) uint64 {
+	if n > 0 {
+		return n * factorial(n-1)
+	} else {
+		return 1
+	}
+}
+
+func fibonacci(n int) int {
+	if n < 2 {
+		return n
+	} else {
+		return fibonacci(n-1) + fibonacci(n-2)
+	}
+}
+
 func main() {
 	println(max(3, 4))
 	println(max(5, 4))
@@ -48,4 +64,7 @@ func main() {
 	println(next())
 	println(next())
 	println(next())
+
+	println(factorial(10))
+	println(fibonacci(10))
 }
