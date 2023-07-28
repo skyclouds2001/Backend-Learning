@@ -32,7 +32,8 @@ func main() {
 
 	var n1 int64 = 10
 	var n2 = float64(n1)
-	println(n1, n2)
+	var n3 = 10e6
+	println(n1, n2, n3)
 
 	println(strconv.Atoi("1"))
 	println(strconv.Itoa(1))
