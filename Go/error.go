@@ -16,7 +16,19 @@ func sqrt(f float64) (float64, error) {
 func main() {
 	result, error := sqrt(-1)
 	println(result, error)
+	
+	if (error != nil) {
+		println("SUCCESS")
+	} else {
+		println("ERROR")
+	}
 
-	res, err := sqrt(-1)
+	res, err := sqrt(1)
 	println(res, err)
+	
+	if (err != nil) {
+		println("SUCCESS")
+	} else {
+		println("ERROR")
+	}
 }
