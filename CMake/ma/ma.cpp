@@ -8,10 +8,8 @@
  * @version v0.0.0
  */
 
-#ifdef USE_MA
-    #include "ma.h"
+#include "ma.h"
 
-    int ma::sqrt(int v) {
-        return v;
-    }
-#endif
+int ma::abs(int v) {
+    return v < 0 ? -v : v;
+}

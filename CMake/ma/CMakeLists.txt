@@ -1,4 +1,4 @@
-add_library(ma STATIC ma.cpp)
+add_library(ma STATIC ma.h ma.cpp)
 
 set_target_properties(ma PROPERTIES VERSION 0.0 SOVERSION 1)
 

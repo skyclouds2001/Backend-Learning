@@ -12,7 +12,7 @@
 #define TUTORIAL_MA_H
 
 namespace ma {
-    int sqrt(int v);
+    int abs(int v);
 }
 
 #endif
