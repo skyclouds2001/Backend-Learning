@@ -1,8 +1,11 @@
 /**
- * @file main source file
+ * @file tutorial.cpp
+ * @brief main entry file
+ * @copyright Copyright 2023 skyclouds2001
+ * @license MIT
  * @author c50034865
  * @date 2023/7/31
- * @version 0.0
+ * @version v0.0.0
  */
 
 #include "iostream"
