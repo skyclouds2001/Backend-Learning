@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sync"
 	"time"
 )
 
@@ -41,7 +42,7 @@ func main() {
 	src := make(chan int)
 	dest := make(chan int, 3)
 
-	go func ()  {
+	go func() {
 		defer close(src)
 		for i := 0; i < 10; i++ {
 			src <- i
@@ -58,4 +59,39 @@ func main() {
 	for i := range dest {
 		println(i)
 	}
+
+	k := 0
+	for i := 0; i < 5; i++ {
+		go func() {
+			for i := 0; i < 1000; i++ {
+				k++
+			}
+		}()
+	}
+	time.Sleep(time.Second)
+	println("add without lock", k)
+
+	j := 0
+	var lock sync.Mutex
+	for i := 0; i < 5; i++ {
+		go func() {
+			for i := 0; i < 1000; i++ {
+				lock.Lock()
+				j++
+				lock.Unlock()
+			}
+		}()
+	}
+	time.Sleep(time.Second)
+	println("add with lock", j)
+
+	var wg sync.WaitGroup
+	wg.Add(5)
+	for i := 0; i < 5; i++ {
+		go func (j int)  {
+			defer wg.Done()
+			println(j)
+		}(i)
+	}
+	wg.Wait()
 }
