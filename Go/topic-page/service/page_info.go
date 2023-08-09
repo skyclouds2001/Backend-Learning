@@ -1,10 +1,21 @@
 package service
 
-import "topic_page/repository"
+import (
+	"errors"
+	"sync"
+	"topic_page/repository"
+)
 
 type PageInfo struct {
 	Topic    *repository.Topic
 	PostList []*repository.Post
+}
+
+type QueryPageInfoFlow struct {
+	topicId  int64
+	pageInfo *PageInfo
+	topic    *repository.Topic
+	posts    []*repository.Post
 }
 
 func (f *QueryPageInfoFlow) Do() (*PageInfo, error) {
@@ -18,4 +29,26 @@ func (f *QueryPageInfoFlow) Do() (*PageInfo, error) {
 		return nil, err
 	}
 	return f.pageInfo, nil
+}
+
+func (f *QueryPageInfoFlow) checkParam() error {
+	if f.topicId < 0 {
+		return errors.New("topic id must be larger than 0")
+	}
+	return nil
+}
+
+func (f *QueryPageInfoFlow) prepareInfo() error {
+	var wg sync.WaitGroup
+
+	wg.Add(2)
+	go func() {}()
+	go func() {}()
+	wg.Wait()
+
+	return nil
+}
+
+func (f *QueryPageInfoFlow) packPageInfo() error {
+	return nil
 }
