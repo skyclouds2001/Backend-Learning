@@ -33,7 +33,7 @@ func NewPostDaoInstance() *PostDao {
 	return postDao
 }
 
-func (*PostDao) QueryPostById(id int64) []*Post {
+func (*PostDao) QueryPostByParentId(id int64) []*Post {
 	return postIndexMap[id]
 }
 
