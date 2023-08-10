@@ -11,6 +11,16 @@ type PageInfo struct {
 	PostList []*repository.Post
 }
 
+func QueryPageInfo(topicId int64) (*PageInfo, error) {
+	return NewQueryPageInfoFlow(topicId).Do()
+}
+
+func NewQueryPageInfoFlow(topicId int64) *QueryPageInfoFlow {
+	return &QueryPageInfoFlow{
+		topicId: topicId,
+	}
+}
+
 type QueryPageInfoFlow struct {
 	topicId  int64
 	pageInfo *PageInfo
@@ -42,13 +52,25 @@ func (f *QueryPageInfoFlow) prepareInfo() error {
 	var wg sync.WaitGroup
 
 	wg.Add(2)
-	go func() {}()
-	go func() {}()
+	go func() {
+		defer wg.Done()
+		topic := repository.NewTopicDaoInstance().QueryTopicById(f.topicId)
+		f.topic = topic
+	}()
+	go func() {
+		defer wg.Done()
+		posts := repository.NewPostDaoInstance().QueryPostByParentId(f.topicId)
+		f.posts = posts
+	}()
 	wg.Wait()
 
 	return nil
 }
 
 func (f *QueryPageInfoFlow) packPageInfo() error {
+	f.pageInfo = &PageInfo{
+		Topic:    f.topic,
+		PostList: f.posts,
+	}
 	return nil
 }
