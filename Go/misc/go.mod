@@ -1,4 +1,4 @@
-module Go
+module main
 
 go 1.18
 
